@@ -71,7 +71,6 @@ Instance: CommunityToFacilityReferralExample
 InstanceOf: CommunityFacilityReferral
 Usage: #example
 Title: "Community To Facility Referral Example"
-Description: ""
 * status = #active
 * intent = #order
 * priority = #urgent
