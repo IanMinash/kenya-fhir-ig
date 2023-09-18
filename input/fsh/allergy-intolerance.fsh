@@ -6,7 +6,8 @@ Alias: $NHDDUrl = http://nhdd.health.go.ke
 Profile: KenyaAllergyIntolerance
 Parent: AllergyIntolerance
 Id: kenya-allergy-intolerance
-Title: "Kenya Allergy Intolerance"
+Title: "Allergy Intolerance"
+Description: "Profile for capturing of allergies"
 * clinicalStatus 1..1 MS
 * verificationStatus 1..1 MS
 * category 1..1 MS
