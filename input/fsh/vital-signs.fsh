@@ -5,7 +5,7 @@ Alias: $UCUM = http://unitsofmeasure.org
 Profile: VitalSigns
 Parent: Observation
 Id: vital-signs
-Title: "VitalSigns"
+Title: "Vital Signs"
 Description: "Vital Signs Profile"
 * status 1..1 MS
 * category 1..1 
@@ -61,10 +61,8 @@ Usage: #example
 Title: "Vital Signs Example"
 Description: "An example of vital signs with BP and body temperature captured"
 * status = #final
-* category.coding.code = #vital-signs
-* category.coding.system = $ObservationCategoryCodes
-* code.coding.code = #47971
-* code.coding.system = $NHDDUrl
+* category.coding = $ObservationCategoryCodes#vital-signs
+* code.coding = $NHDDUrl#47971 "Vital signs"
 * component[0].code = $NHDDUrl#13550
 * component[0].valueQuantity = $UCUM#mm[Hg]
 * component[0].valueQuantity.value = 120

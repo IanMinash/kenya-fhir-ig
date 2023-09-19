@@ -1,5 +1,5 @@
-Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+Alias: $AllergyIntoleranceClinicalStatusCodes = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+Alias: $AllergyIntoleranceVerificationStatusCodes = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $sct = http://snomed.info/sct
 Alias: $NHDDUrl = http://nhdd.health.go.ke
 
@@ -19,8 +19,8 @@ Description: "Profile for capturing of allergies"
 Instance: KenyaAllergyIntoleranceExample
 InstanceOf: KenyaAllergyIntolerance
 Usage: #example
-* clinicalStatus = $allergyintolerance-clinical#active "Active"
-* verificationStatus = $allergyintolerance-verification#confirmed "Confirmed"
+* clinicalStatus = $AllergyIntoleranceClinicalStatusCodes#active "Active"
+* verificationStatus = $AllergyIntoleranceVerificationStatusCodes#confirmed "Confirmed"
 * category = #medication
 * criticality = #high
 * code = $sct#7985000 "Sulfur isotope"
