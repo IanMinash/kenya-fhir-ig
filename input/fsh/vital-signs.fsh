@@ -1,7 +1,3 @@
-Alias: $ObservationCategoryCodes = http://terminology.hl7.org/CodeSystem/observation-category
-Alias: $NHDDUrl = http://nhdd.health.go.ke
-Alias: $UCUM = http://unitsofmeasure.org
-
 Profile: VitalSigns
 Parent: Observation
 Id: vital-signs
@@ -54,6 +50,10 @@ Description: "Vital Signs Profile"
 * component[bloodsugar].valueQuantity.value 1..1
 * subject 1..1 MS
 * subject only Reference(Patient)
+* subject.identifier.system 1..1 MS
+* subject.identifier.system = $CRUrl
+* subject.identifier.value 1..1
+* subject.type = #Patient
 
 Instance: VitalSignsExample
 InstanceOf: VitalSigns

@@ -1,8 +1,3 @@
-Alias: $RequestIntentCodes = http://hl7.org/fhir/request-intent
-Alias: $NHDDUrl = http://nhdd.health.go.ke
-Alias: $KMHFLchus = http://kmhfl.health.go.ke/chu
-Alias: $KMHFLfacilities = http://kmhfl.health.go.ke/facility
-
 Profile: CommunityFacilityReferral
 Parent: ServiceRequest
 Id: community-facility-referral
@@ -17,6 +12,10 @@ Description: "Profile for referrals made from Community Health Units to Health F
 * priority 1..1 MS
 * subject 1..1
 * subject only Reference(Patient)
+* subject.identifier.system 1..1 MS
+* subject.identifier.system = $CRUrl
+* subject.identifier.value 1..1
+* subject.type = #Patient
 * occurrence[x] only Period
 * occurrencePeriod 1..1
 * authoredOn 1..1
@@ -75,7 +74,9 @@ Title: "Community To Facility Referral Example"
 * intent = #order
 * priority = #urgent
 * category = NHDD#54076
-* subject.reference = "Patient/MOHJ3NG4K1TU"
+* subject.identifier.system = $CRUrl
+* subject.identifier.value = #MOHJ3NG4K1TU"
+* subject.type = #Patient
 * occurrencePeriod.start = "2023-08-27T08:00:00+03:00"
 * occurrencePeriod.end = "2023-08-28T08:00:00+03:00"
 * authoredOn = "2023-08-27T07:30:20+03:00"

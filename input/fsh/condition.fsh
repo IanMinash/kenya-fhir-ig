@@ -1,8 +1,3 @@
-Alias: $NHDDUrl = http://nhdd.health.go.ke
-Alias: $ICD11Url = http://id.who.int/icd11/mms
-Alias: $ClinicalStatusCodes = http://hl7.org/fhir/CodeSystem/condition-clinical
-Alias: $VerificationStatusCodes = http://hl7.org/fhir/CodeSystem/condition-ver-status
-
 Profile: EncounterDiagnosis
 Parent: Condition
 Id: encounter-diagnosis
@@ -24,6 +19,10 @@ Description: "Profile for a Diagnosis made during an encounter."
 * verificationStatus 1..1 MS
 * subject 1..1
 * subject only Reference(Patient)
+* subject.identifier.system 1..1 MS
+* subject.identifier.system = $CRUrl
+* subject.identifier.value 1..1
+* subject.type = #Patient
 * onset[x] only dateTime
 * onsetDateTime 1..1 MS
 * encounter 1..1 MS
@@ -40,4 +39,6 @@ Description: "An example of a diagnosis recorded during an encounter"
 * verificationStatus.coding = $VerificationStatusCodes#confirmed
 * onsetDateTime = "2023-09-19T08:00:00+03:00"
 * encounter.reference = "Encounter/a1f9c031-f15e-420d-a736-0fb83cea1a32"
-* subject.reference = "Patient/MOHJ3NG4K1TU"
+* subject.identifier.system = $CRUrl
+* subject.identifier.value = #MOHJ3NG4K1TU"
+* subject.type = #Patient
